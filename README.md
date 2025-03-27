@@ -63,7 +63,7 @@ This project uses Hardhat Ignition for deployments, which makes it easy to manag
 
 ### Local Deployment (Hardhat Network)
 
-Run hardhat node by running:
+Run hardhat node by running the following:
 
 ```bash
 npx hardhat node
