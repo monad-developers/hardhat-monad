@@ -1,0 +1,103 @@
+{
+  "address": "0x8DDaE96B55fe0A4f4bB503b9A9a10543D7394a0A",
+  "abi": [
+    {
+      "type": "event",
+      "anonymous": false,
+      "name": "MessageSent",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "id",
+          "indexed": false
+        },
+        {
+          "type": "address",
+          "name": "author",
+          "indexed": true
+        },
+        {
+          "type": "address",
+          "name": "recipient",
+          "indexed": true
+        },
+        {
+          "type": "string",
+          "name": "text",
+          "indexed": false
+        },
+        {
+          "type": "uint256",
+          "name": "timestamp",
+          "indexed": false
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "getMessageCount",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "messages",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": ""
+        }
+      ],
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "id"
+        },
+        {
+          "type": "address",
+          "name": "author"
+        },
+        {
+          "type": "address",
+          "name": "recipient"
+        },
+        {
+          "type": "string",
+          "name": "text"
+        },
+        {
+          "type": "uint256",
+          "name": "timestamp"
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "sendMessage",
+      "constant": false,
+      "payable": false,
+      "inputs": [
+        {
+          "type": "address",
+          "name": "_recipient"
+        },
+        {
+          "type": "string",
+          "name": "_text"
+        }
+      ],
+      "outputs": []
+    }
+  ]
+}
