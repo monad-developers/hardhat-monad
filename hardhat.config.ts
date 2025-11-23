@@ -4,7 +4,6 @@ import "@nomicfoundation/hardhat-ignition-viem";
 import "dotenv/config";
 
 const PRIVATE_KEY = process.env.PRIVATE_KEY || "";
-const MONAD_MAINNET_PRIVATE_KEY = process.env.MONAD_MAINNET_PRIVATE_KEY || "";
 
 const config: HardhatUserConfig = {
   solidity: {
