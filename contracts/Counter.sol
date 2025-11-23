@@ -10,10 +10,4 @@ contract Counter {
     x++;
     emit Increment(1);
   }
-
-  function incB1231231212300y(uint by) public {
-    require(by > 0, "incBy: increment should be positive");
-    x += by;
-    emit Increment(by);
-  }
 }
