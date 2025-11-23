@@ -31,6 +31,7 @@ const config: HardhatUserConfig = {
     apiUrl: "https://sourcify-api-monad.blockvision.org",
     browserUrl: "https://testnet.monadexplorer.com",
   },
+  etherscan: { enabled: false },
 };
 
 export default config;
