@@ -8,12 +8,10 @@ contract, a test for that contract, and a Hardhat Ignition module that deploys t
 ```
 hardhat-monad/
 ├── contracts/             # Smart contract source files
-│   └── Lock.sol           # Sample time-locked wallet contract
+│   └── Counter.sol        # Simple counter contract (no constructor params)
 ├── ignition/              # Hardhat Ignition deployment modules
 │   └── modules/
-│       └── Lock.ts        # Deployment configuration for Lock contract
-├── test/                  # Test files
-│   └── Lock.ts            # Tests for the Lock contract
+│       └── Counter.ts     # Deployment configuration for Counter contract
 ├── .env.example           # Example environment variables file
 ├── hardhat.config.ts      # Hardhat configuration
 ├── package.json           # Project dependencies
@@ -74,7 +72,7 @@ npx hardhat node
 Then deploy:
 
 ```bash
-npx hardhat ignition deploy ignition/modules/Lock.ts
+npx hardhat ignition deploy ignition/modules/Counter.ts
 ```
 
 ### Deploy to Monad Testnet
@@ -82,13 +80,13 @@ npx hardhat ignition deploy ignition/modules/Lock.ts
 To deploy to Monad Testnet, you need an account with funds. Make sure you have set your private key in the `.env` file:
 
 ```bash
-npx hardhat ignition deploy ignition/modules/Lock.ts --network monadTestnet
+npx hardhat ignition deploy ignition/modules/Counter.ts --network monadTestnet
 ```
 
 To redeploy to a different address:
 
 ```bash
-npx hardhat ignition deploy ignition/modules/Lock.ts --network monadTestnet --reset
+npx hardhat ignition deploy ignition/modules/Counter.ts --network monadTestnet --reset
 ```
 
 To verify the deployed contract on Monad Testnet (uses Sourcify and MonadScan):
@@ -97,18 +95,20 @@ To verify the deployed contract on Monad Testnet (uses Sourcify and MonadScan):
 npx hardhat verify <CONTRACT_ADDRESS> --network monadTestnet
 ```
 
+**Note:** The verification command may show an error message, but this is often misleading - the contract is usually verified successfully on both Sourcify and MonadScan. Check the explorer links to confirm verification.
+
 ### Deploy to Monad Mainnet
 
 To deploy to Monad Mainnet, ensure you have set your private key in the `.env` file:
 
 ```bash
-npx hardhat ignition deploy ignition/modules/Lock.ts --network monadMainnet
+npx hardhat ignition deploy ignition/modules/Counter.ts --network monadMainnet
 ```
 
 To redeploy to a different address:
 
 ```bash
-npx hardhat ignition deploy ignition/modules/Lock.ts --network monadMainnet --reset
+npx hardhat ignition deploy ignition/modules/Counter.ts --network monadMainnet --reset
 ```
 
 To verify the deployed contract on Monad Mainnet (uses Sourcify and MonadScan):
@@ -117,18 +117,18 @@ To verify the deployed contract on Monad Mainnet (uses Sourcify and MonadScan):
 npx hardhat verify <CONTRACT_ADDRESS> --network monadMainnet
 ```
 
+**Note:** The verification command may show an error message, but this is often misleading - the contract is usually verified successfully on both Sourcify and MonadScan. Check the explorer links to confirm verification.
+
 Once verified, you can view your contract on:
 - [MonadVision](https://monadvision.com) (Sourcify)
 - [MonadScan](https://monadscan.com) (Etherscan)
 
-## Customizing the Lock Contract
+## Counter Contract
 
-The sample Lock contract is a simple time-locked wallet that:
-- Accepts ETH during deployment
-- Locks funds until a specified timestamp
-- Allows only the owner to withdraw once the time has passed
-
-You can modify the unlock time in `ignition/modules/Lock.ts` or pass it as a parameter during deployment.
+The sample Counter contract includes:
+- `inc()` - Increment counter by 1
+- `incBy(uint)` - Increment counter by a specified amount
+- `x` - Public variable to read the current count
 
 ## Got questions?
 

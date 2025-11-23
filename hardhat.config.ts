@@ -11,8 +11,7 @@ const config: HardhatUserConfig = {
     version: "0.8.28",
     settings: {
       metadata: {
-        bytecodeHash: "none", // disable ipfs
-        useLiteralContent: true, // use source code
+        bytecodeHash: "ipfs", // Required for Sourcify verification
       },
     },
   },
@@ -35,14 +34,25 @@ const config: HardhatUserConfig = {
   },
   etherscan: {
     enabled: true,
-    apiKey: ETHERSCAN_API_KEY,
+    apiKey: {
+      monadMainnet: ETHERSCAN_API_KEY,
+      monadTestnet: ETHERSCAN_API_KEY,
+    },
     customChains: [
       {
-        network: "monad",
+        network: "monadMainnet",
         chainId: 143,
         urls: {
-          apiURL: "https://api.etherscan.io/v2/api",
+          apiURL: "https://api.etherscan.io/v2/api?chainid=143",
           browserURL: "https://monadscan.com",
+        },
+      },
+      {
+        network: "monadTestnet",
+        chainId: 10143,
+        urls: {
+          apiURL: "https://api.etherscan.io/v2/api?chainid=10143",
+          browserURL: "https://testnet.monadscan.com",
         },
       },
     ],
