@@ -1,6 +1,7 @@
 # Monad flavored Hardhat starter
 
-This project demonstrates a basic Hardhat use case optimized for Monad. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+This project demonstrates a basic Hardhat use case configured for Monad. It comes with a sample
+contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
 
 ## Project Structure
 
@@ -29,7 +30,7 @@ hardhat-monad/
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/portdeveloper/hardhat-monad.git
+   git clone https://github.com/monad-developers/hardhat-monad.git
    cd hardhat-monad
    ```
 
@@ -115,7 +116,7 @@ To verify the deployed contract on Monad Mainnet:
 npx hardhat verify <CONTRACT_ADDRESS> --network monadMainnet
 ```
 
-Once verified, you can view your contract on the [Monad Explorer](https://testnet.monadexplorer.com).
+Once verified, you can view your contract on [MonadVision](https://monadvision.com).
 
 ## Customizing the Lock Contract
 
@@ -135,4 +136,3 @@ You can modify the unlock time in `ignition/modules/Lock.ts` or pass it as a par
 ## License
 
 This project is licensed under the MIT License.
-

@@ -24,12 +24,13 @@ const config: HardhatUserConfig = {
     monadMainnet: {
       url: `https://rpc.monad.xyz`,
       accounts: [PRIVATE_KEY],
+      chainId: 143,
     },
   },
   sourcify: {
     enabled: true,
     apiUrl: "https://sourcify-api-monad.blockvision.org",
-    browserUrl: "https://testnet.monadexplorer.com",
+    browserUrl: "https://monadvision.com",
   },
   etherscan: { enabled: false },
 };
