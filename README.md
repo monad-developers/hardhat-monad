@@ -44,9 +44,10 @@ hardhat-monad/
    cp .env.example .env
    ```
 
-4. Add your private key to the `.env` file:
+4. Add your private key and Etherscan API key to the `.env` file:
    ```
    PRIVATE_KEY=your_private_key_here
+   ETHERSCAN_API_KEY=your_etherscan_api_key_here
    ```
    ⚠️ **IMPORTANT**: Never commit your `.env` file or expose your private key.
 
@@ -90,7 +91,7 @@ To redeploy to a different address:
 npx hardhat ignition deploy ignition/modules/Lock.ts --network monadTestnet --reset
 ```
 
-To verify the deployed contract on Monad Testnet:
+To verify the deployed contract on Monad Testnet (uses Sourcify and MonadScan):
 
 ```bash
 npx hardhat verify <CONTRACT_ADDRESS> --network monadTestnet
@@ -110,13 +111,15 @@ To redeploy to a different address:
 npx hardhat ignition deploy ignition/modules/Lock.ts --network monadMainnet --reset
 ```
 
-To verify the deployed contract on Monad Mainnet:
+To verify the deployed contract on Monad Mainnet (uses Sourcify and MonadScan):
 
 ```bash
 npx hardhat verify <CONTRACT_ADDRESS> --network monadMainnet
 ```
 
-Once verified, you can view your contract on [MonadVision](https://monadvision.com).
+Once verified, you can view your contract on:
+- [MonadVision](https://monadvision.com) (Sourcify)
+- [MonadScan](https://monadscan.com) (Etherscan)
 
 ## Customizing the Lock Contract
 

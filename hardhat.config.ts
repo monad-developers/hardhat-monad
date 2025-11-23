@@ -4,6 +4,7 @@ import "@nomicfoundation/hardhat-ignition-viem";
 import "dotenv/config";
 
 const PRIVATE_KEY = process.env.PRIVATE_KEY || "";
+const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || "";
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -32,7 +33,20 @@ const config: HardhatUserConfig = {
     apiUrl: "https://sourcify-api-monad.blockvision.org",
     browserUrl: "https://monadvision.com",
   },
-  etherscan: { enabled: false },
+  etherscan: {
+    enabled: true,
+    apiKey: ETHERSCAN_API_KEY,
+    customChains: [
+      {
+        network: "monad",
+        chainId: 143,
+        urls: {
+          apiURL: "https://api.etherscan.io/v2/api",
+          browserURL: "https://monadscan.com",
+        },
+      },
+    ],
+  },
 };
 
 export default config;
