@@ -57,72 +57,62 @@ Run tests with Hardhat:
 npx hardhat test
 ```
 
-## How to deploy your contract
+## Deployment
 
 This project uses Hardhat Ignition for deployments, which makes it easy to manage complex deployment procedures.
 
-### Local Deployment (Hardhat Network)
+### Deploy to Local Chain
 
-Run hardhat node by running:
+To deploy the contract to a local hardhat node, first start the node:
 
 ```bash
 npx hardhat node
 ```
 
-To deploy the contract to the local hardhat node, run the following command:
+Then deploy:
 
 ```bash
 npx hardhat ignition deploy ignition/modules/Lock.ts
 ```
 
-### Monad Testnet Deployment
+### Deploy to Monad Testnet
+
+To deploy to Monad Testnet, you need an account with funds. Make sure you have set your private key in the `.env` file:
 
 ```bash
 npx hardhat ignition deploy ignition/modules/Lock.ts --network monadTestnet
 ```
 
-To redeploy the same code to a different address use the command below:
+To redeploy to a different address:
 
 ```bash
 npx hardhat ignition deploy ignition/modules/Lock.ts --network monadTestnet --reset
 ```
 
-You can customize deployment parameters:
+To verify the deployed contract on Monad Testnet:
 
 ```bash
-npx hardhat ignition deploy ignition/modules/Lock.ts --network monadTestnet --parameters '{"unlockTime": 1893456000, "lockedAmount": "1000000000000000"}'
+npx hardhat verify <CONTRACT_ADDRESS> --network monadTestnet
 ```
 
-### Monad Mainnet Deployment
+### Deploy to Monad Mainnet
+
+To deploy to Monad Mainnet, ensure you have set your private key in the `.env` file:
 
 ```bash
 npx hardhat ignition deploy ignition/modules/Lock.ts --network monadMainnet
 ```
 
-To redeploy the same code to a different address use the command below:
+To redeploy to a different address:
 
 ```bash
 npx hardhat ignition deploy ignition/modules/Lock.ts --network monadMainnet --reset
 ```
 
-You can customize deployment parameters:
+To verify the deployed contract on Monad Mainnet:
 
 ```bash
-npx hardhat ignition deploy ignition/modules/Lock.ts --network monadMainnet --parameters '{"unlockTime": 1893456000, "lockedAmount": "1000000000000000"}'
-```
-
-## How to verify your contract
-
-This project is configured to use Sourcify for contract verification on Monad. After deployment, you can verify your contract with:
-
-**Monad Testnet:**
-```bash
-npx hardhat verify <contract_address> --network monadTestnet
-```
-
-**Monad Mainnet:**
-```bash
-npx hardhat verify <contract_address> --network monadMainnet
+npx hardhat verify <CONTRACT_ADDRESS> --network monadMainnet
 ```
 
 Once verified, you can view your contract on the [Monad Explorer](https://testnet.monadexplorer.com).
