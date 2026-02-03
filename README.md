@@ -127,7 +127,6 @@ Once verified, you can view your contract on:
 
 The sample Counter contract includes:
 - `inc()` - Increment counter by 1
-- `incBy(uint)` - Increment counter by a specified amount
 - `x` - Public variable to read the current count
 
 ## Got questions?
