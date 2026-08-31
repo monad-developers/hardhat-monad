@@ -8,8 +8,9 @@ const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || "";
 
 const config: HardhatUserConfig = {
   solidity: {
-    version: "0.8.28",
+    version: "0.8.30",
     settings: {
+      evmVersion: "osaka",
       metadata: {
         bytecodeHash: "ipfs", // Required for Sourcify verification
       },
