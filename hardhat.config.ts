@@ -8,7 +8,7 @@ const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || "";
 
 const config: HardhatUserConfig = {
   solidity: {
-    version: "0.8.31",
+    version: "0.8.30",
     settings: {
       evmVersion: "osaka",
       metadata: {
