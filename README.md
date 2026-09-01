@@ -22,7 +22,7 @@ hardhat-monad/
 
 ### Prerequisites
 
-- Node.js (v16+)
+- Node.js (v20+)
 
 ### Installation
 
